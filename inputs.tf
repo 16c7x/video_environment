@@ -24,3 +24,8 @@ variable "key" {
   description = "AWS Key pair"
   default     = ""
 }
+
+variable "local_ip" {
+  description = "Your local IP to tell AWS to let you in"
+  default     = ""
+}
