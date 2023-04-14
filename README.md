@@ -16,3 +16,7 @@ ext_ip=`curl -s https://freedns.afraid.org/dynamic/check.php | grep REMOTE_ADDR 
 ```
 
 * To build run ```terraform apply```.
+
+## Acknowledgements
+
+The network module was copied from https://github.com/puppetlabs/puppetlabs-pecdm
