@@ -22,10 +22,10 @@ variable "aws_ami_size" {
 
 variable "key" {
   description = "AWS Key pair"
-  default     = ""
+  default     = "andrew.jones.windows"
 }
 
-variable "local_ip" {
-  description = "Your local IP to tell AWS to let you in"
-  default     = ""
-}
+#variable "local_ip" {
+#  description = "Your local IP to tell AWS to let you in"
+#  default     = "86.183.119.135/32"
+#}

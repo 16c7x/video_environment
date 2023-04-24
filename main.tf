@@ -1,4 +1,16 @@
 # Main config
+terraform {
+  required_providers {
+    external = {
+      source  = "hashicorp/external"
+      version = "2.3.1"
+    }
+  }
+}
+
+data "external" "myip" {
+  program = [ "bash", "./get_my_ip.sh"]
+}
 
 provider "aws" {
   region = "${var.aws_region}"
@@ -9,7 +21,8 @@ module "networking" {
   source    = "./modules/networking"
   id        = "demo"
   project   = "demo"
-  allow     = concat(["10.128.0.0/9"], [ "109.151.183.6/32", "86.183.119.135/32" ])
+  #allow     = concat(["10.128.0.0/9"], [ "109.151.183.6/32", "${var.local_ip}" ])
+  allow      = concat(["10.128.0.0/9"], [ "109.151.183.6/32", data.external.myip.result.my_ip ])
   to_create = true
   subnet    = null
 }
