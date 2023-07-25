@@ -18,7 +18,7 @@ provider "aws" {
 
 # Contain all the networking configuration for readability
 module "networking" {
-  source    = "./modules/networking"
+  source    = "git@github.com:16c7x/terraform_networking.git"
   id        = "demo"
   project   = "demo"
   #allow     = concat(["10.128.0.0/9"], [ "109.151.183.6/32", "${var.local_ip}" ])
