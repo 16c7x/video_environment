@@ -12,7 +12,8 @@ variable "linux_ami" {
 
 variable "windows_ami" {
   description = "Windows 2012 ami for the Windows nodes"
-  default     = "ami-08456538e3a727106"
+  #default     = "ami-08456538e3a727106"
+  default     = "ami-0855cc7dacc5f76eb"
 }
 
 variable "aws_ami_size" {
@@ -25,7 +26,3 @@ variable "key" {
   default     = "andrew.jones.windows"
 }
 
-#variable "local_ip" {
-#  description = "Your local IP to tell AWS to let you in"
-#  default     = "86.183.119.135/32"
-#}
